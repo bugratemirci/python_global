@@ -1,3 +1,27 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "n2_globals"
+authors = [
+    {name = "Buğrahan Temirci", email = "bugrahan.temirci@hotmail.com"},
+]
+description = "Global Entities"
+readme = "README.rst"
+requires-python = ">=3.8"
+keywords = ["one", "two"]
+license = {text = "BSD-3-Clause"}
+classifiers = [
+    "Framework :: Django",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "requests",
+    'importlib-metadata; python_version<"3.10"',
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+pdf = ["ReportLab>=1.2", "RXP"]
+rest = ["docutils>=0.3", "pack ==1.1, ==1.3"]
