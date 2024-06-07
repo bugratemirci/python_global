@@ -7,7 +7,9 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
-
 class Post(BaseModel):
     title = models.CharField(max_length=100)
     body = models.TextField()
+
+    class Meta:
+        db_table = 'post'
